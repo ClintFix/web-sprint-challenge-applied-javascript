@@ -13,6 +13,20 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  // create container element & add class
+  const topicsDiv = document.createElement('div');
+  topicsDiv.classList.add('topics');
+
+  // Loop over passed array and create, add classes to, and append elements with expected content
+  topics.forEach(topic => {
+    const newTopic = document.createElement('div'); // create new tab
+    newTopic.classList.add('tab'); //add '.tab" class to element
+    newTopic.textContent = topic; // populate tab with content from passed array
+    topicsDiv.appendChild(newTopic); //append newly created tab to the topics div
+  })
+
+  return topicsDiv;
 }
 
 const tabsAppender = (selector) => {
