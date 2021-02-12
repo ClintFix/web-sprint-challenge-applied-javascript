@@ -11,6 +11,30 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
+  //create each element and set to variable
+  const header = document.createElement('div');
+  const spanDate = document.createElement('span');
+  const titleHeader = document.createElement('h1');
+  const spanTemp = document.createElement('span');
+
+  //set class names to each item
+  header.classList.add('header');
+  spanDate.classList.add('date');
+  spanTemp.classList.add('temp')
+
+  //create html element
+  header.appendChild(spanDate);
+  header.appendChild(titleHeader);
+  header.appendChild(spanTemp);
+
+  // add content to items
+  titleHeader.textContent = title;
+  spanDate.textContent = date;
+  spanTemp.textContent = temp;
+
+  //return HTML element
+  return header;
 }
 
 const headerAppender = (selector) => {
