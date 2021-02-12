@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -23,11 +24,21 @@ const Tabs = (topics) => {
   // Loop over passed array and create, add classes to, and append elements with expected content
   topics.forEach(topic => {
     const newTopic = document.createElement('div'); // create new tab
-    newTopic.classList.add('tab'); //add '.tab" class to element
+    newTopic.classList.add('tab', topic); //add '.tab" class to element
     newTopic.textContent = topic; // populate tab with content from passed array
     topicsDiv.appendChild(newTopic); //append newly created tab to the topics div
-  })
 
+    newTopic.addEventListener('click', event => {
+      const articleArray = Array.from(document.getElementsByClassName(`card`));
+      console.log(articleArray);
+      articleArray.forEach(article => {
+        article.style.display = '';
+        if (!article.classList.contains(`${topic}`)){
+          article.style.display = 'none';
+        }
+      })
+    });
+  });
   return topicsDiv;
 }
 

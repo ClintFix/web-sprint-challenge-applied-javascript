@@ -80,10 +80,15 @@ const cardAppender = (selector) => {
       //   })
       // })
       const topicsArr = Object.keys(res.data.articles);
-      console.log(topicsArr);
       topicsArr.forEach(topic => {
         res.data.articles[topic].forEach(article => {
-          entryPoint.appendChild(Card(article));
+          const newCard = Card(article);
+          if (topic === 'node'){
+            newCard.classList.add('node.js')
+          } else {
+            newCard.classList.add(topic);
+          }
+          entryPoint.appendChild(newCard);
         }) 
       })
       

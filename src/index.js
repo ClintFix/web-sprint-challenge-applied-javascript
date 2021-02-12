@@ -13,3 +13,13 @@ worker.start()
 headerAppender('.header-container')
 tabsAppender('.tabs-container')
 cardAppender('.cards-container')
+
+// const tabsArray = Array.from(document.querySelectorAll('.tab'))
+
+
+// function filter(topic) {
+//     const articleArray = Array.from(document.querySelectorAll(`.card .${topic}`));
+//     console.log(articleArray)
+// }
+
+// export { filter }
